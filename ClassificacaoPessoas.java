@@ -11,7 +11,7 @@ public class ClassificacaoPessoas {
 				nervosoQuarenta=0, calmoDezoito=0;
 		
 		Scanner ler = new Scanner(System.in);
-		while(pessoas<=150) {
+		while(pessoas<=8) {
 			System.out.println("\nQuantidade de Entrevistados: "+pessoas);
 			System.out.println("\nEntre com sua idade: ");
 			idade = ler.nextInt();
@@ -34,6 +34,13 @@ public class ClassificacaoPessoas {
 			
 			if(psico == 1) {
 				calmos++;
+				if(sexo ==3 && psico == 1) {
+					outroCalmo++;
+				}
+				else if(idade<18 && psico == 1) {
+					calmoDezoito++;
+				};
+				
 			}
 			else if(sexo == 1 && psico == 2) {
 				mulherNervosa++;
@@ -41,15 +48,11 @@ public class ClassificacaoPessoas {
 			else if(sexo == 2 && psico == 3) {
 				homemAgressivo++;
 			}
-			else if(sexo ==3 && psico == 1) {
-				outroCalmo++;
-			}
+			
 			else if(idade>40 && psico == 2) {
 				nervosoQuarenta++;
 			}
-			else if(idade<18 && psico == 1) {
-				calmoDezoito++;
-			}		
+					
 			
 			pessoas++;
 		}
